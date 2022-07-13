@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
-
+                <img src="https://www.battleofsea.com/assets/images/logo.png" style="width:50% !important;" class="card-img rounded mx-auto d-block" alt="...">
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
