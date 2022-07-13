@@ -53,7 +53,12 @@
                   <i class="bi bi-archive-fill"></i>
                     expedient
                    </button>
+                   <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modaledit" onclick="openedit({{$item->id_ship}});">
+                   <i class="bi bi-pen-fill"></i>
+                    edit
+                   </button>
                 </td>
+                
               </tr>
             @endforeach
           </tbody>
@@ -169,6 +174,22 @@
     </div>
   </div>
 </div>
+<div class="modal fade" id="modaledit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">PANEL EDIT SHIP</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="editshipform">
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
 <script>
   function openexpedient(id) {
     $('#expedientship').val(id);
@@ -179,6 +200,17 @@
         return response.text();
     }).then(function(htmlContent){
         $("#expedienttable").html(htmlContent);
+    }).catch(function(err){
+        console.log(err);
+    });
+  }
+  function openedit(id) {
+    fetch('https://safeset.crewcare.online/openedit/' + id,{
+        method: 'get'
+    }).then(function(response){
+        return response.text();
+    }).then(function(htmlContent){
+        $("#editshipform").html(htmlContent);
     }).catch(function(err){
         console.log(err);
     });

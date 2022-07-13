@@ -32,4 +32,13 @@ class ControllerExpedient extends Controller
         return view('component.expedienttable',compact('expedient'));
 
     }
+    public function openedit($id)
+    {
+        $ship = DB::table('ships')
+        ->join('guilds', 'guilds.id_guild', '=' ,'ships.id_guild')
+        ->where('ships.id_ship','=',$id)
+        ->first();
+        $guilds = guilds::all();
+        return view('component.editship',compact('ship','guilds'));
+    }
 }

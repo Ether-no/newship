@@ -29,3 +29,5 @@ Route::post('/registership', [App\Http\Controllers\ShipController::class, 'regis
 Route::post('/registerexpedient', [App\Http\Controllers\ControllerExpedient::class, 'registerexpedient'])->name('expedient.register');
 
 Route::get('/expedientget/{id}', [App\Http\Controllers\ControllerExpedient::class, 'expedientget']);
+Route::get('/openedit/{id}', [App\Http\Controllers\ControllerExpedient::class, 'openedit']);
+Route::post('/editship', [App\Http\Controllers\ShipController::class, 'editship'])->name('ship.edit');

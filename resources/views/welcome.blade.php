@@ -6,7 +6,7 @@
  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.js"></script>
  <div class="container">
      <hr>
-     <div class="row">
+      <!--<div class="row">
          <table id="shiptable">
            <thead>
              <tr>
@@ -35,7 +35,7 @@
                 @endforeach
            </tbody>
          </table>
-     </div>
+     </div>-->
  </div>
  <!-- Modal -->
  
